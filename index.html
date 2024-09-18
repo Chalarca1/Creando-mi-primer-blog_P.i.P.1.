@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html> <!-- Define el tipo de documento como HTML5 -->
 <html lang="es"> <!-- Define el idioma del contenido de la página como español -->
 <head>
@@ -154,3 +155,190 @@
     </footer>
 </body>
 </html>
+=======
+<!DOCTYPE html> <!-- Define el tipo de documento como HTML5 -->
+<html lang="es"> <!-- Define el idioma del contenido como español -->
+<head>
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres como UTF-8 para soportar caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Define cómo debe mostrarse la página en dispositivos móviles -->
+    <title>Mi Página</title> <!-- Define el título de la página que aparece en la pestaña del navegador -->
+    <style>
+        /* Estilos generales para la página */
+        body {
+            font-family: Arial, sans-serif; /* Define la fuente del texto */
+            background-color: #f4f4f4; /* Define el color de fondo de la página */
+            color: #333; /* Define el color del texto */
+            margin: 0; /* Elimina el margen por defecto del cuerpo de la página */
+            padding: 0; /* Elimina el padding por defecto del cuerpo de la página */
+            line-height: 1.6; /* Define el interlineado para el texto */
+            padding-bottom: 60px; /* Agrega espacio al final del contenido antes del pie de página */
+        }
+
+        header {
+            background-color: #333; /* Define el color de fondo del encabezado */
+            color: #fff; /* Define el color del texto en el encabezado */
+            padding: 20px 0; /* Define el padding superior e inferior del encabezado */
+            text-align: center; /* Centra el texto en el encabezado */
+            position: relative; /* Posiciona el encabezado relativamente para posicionar elementos dentro de él */
+        }
+
+        header img {
+            border-radius: 50%; /* Hace que la imagen del encabezado sea circular */
+            width: 150px; /* Define el ancho de la imagen */
+            height: 150px; /* Define la altura de la imagen */
+            object-fit: cover; /* Asegura que la imagen cubra el área especificada sin distorsionarse */
+            margin-bottom: 10px; /* Agrega un margen inferior a la imagen */
+        }
+
+        nav ul {
+            list-style: none; /* Elimina los puntos de la lista */
+            padding: 0; /* Elimina el padding por defecto de la lista */
+            text-align: center; /* Centra los elementos de navegación */
+        }
+
+        nav ul li {
+            display: inline; /* Muestra los elementos de la lista en línea, uno al lado del otro */
+            margin: 0 10px; /* Agrega un margen horizontal a los elementos de la lista */
+        }
+
+        nav ul li a {
+            color: #fff; /* Define el color de los enlaces en la lista de navegación */
+            text-decoration: none; /* Elimina el subrayado de los enlaces */
+        }
+
+        section {
+            padding: 20px; /* Define el padding dentro de las secciones */
+            margin: 20px; /* Agrega un margen alrededor de las secciones */
+            background-color: #fff; /* Define el color de fondo de las secciones */
+            border-radius: 5px; /* Redondea las esquinas de las secciones */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega una sombra ligera a las secciones */
+        }
+
+        #about img {
+            max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+            height: auto; /* Ajusta la altura de la imagen automáticamente */
+            border-radius: 5px; /* Redondea las esquinas de la imagen */
+            margin-top: 10px; /* Agrega un margen superior a la imagen */
+        }
+
+        /* Estilos para las pestañas del blog */
+        .tab-container {
+            margin-bottom: 20px; /* Agrega un margen inferior al contenedor de las pestañas */
+        }
+
+        .tabs {
+            display: flex; /* Muestra las pestañas en una fila horizontal */
+            cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre las pestañas */
+        }
+
+        .tab {
+            flex: 1; /* Hace que cada pestaña ocupe el mismo espacio */
+            padding: 10px; /* Define el padding interno de las pestañas */
+            background-color: #333; /* Define el color de fondo de las pestañas */
+            color: #fff; /* Define el color del texto en las pestañas */
+            text-align: center; /* Centra el texto en las pestañas */
+            border: 1px solid #ddd; /* Agrega un borde alrededor de las pestañas */
+            border-radius: 5px 5px 0 0; /* Redondea las esquinas superiores de las pestañas */
+            display: flex; /* Usa flexbox para alinear la imagen y el texto */
+            align-items: center; /* Alinea verticalmente los elementos dentro de la pestaña */
+            justify-content: center; /* Centra el contenido dentro de la pestaña */
+        }
+
+        .tab img {
+            max-width: 50px; /* Define el ancho máximo de la imagen dentro de la pestaña */
+            height: auto; /* Ajusta la altura de la imagen automáticamente para mantener las proporciones */
+            margin-right: 10px; /* Agrega un margen derecho para separar la imagen del texto */
+            border-radius: 50%; /* Redondea las esquinas de la imagen para hacerla circular */
+        }
+
+        .tab.active {
+            background-color: #555; /* Cambia el color de fondo de la pestaña activa */
+        }
+
+        .tab-content {
+            display: none; /* Oculta el contenido de las pestañas por defecto */
+            padding: 20px; /* Define el padding dentro del contenido de las pestañas */
+            background-color: #fff; /* Define el color de fondo del contenido de las pestañas */
+            border: 1px solid #ddd; /* Agrega un borde alrededor del contenido de las pestañas */
+            border-radius: 0 0 5px 5px; /* Redondea las esquinas inferiores del contenido de las pestañas */
+        }
+
+        .tab-content.active {
+            display: block; /* Muestra el contenido de la pestaña activa */
+        }
+
+        article img {
+            max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+            height: auto; /* Ajusta la altura de la imagen automáticamente */
+            border-radius: 5px; /* Redondea las esquinas de la imagen */
+            margin-bottom: 10px; /* Agrega un margen inferior a la imagen */
+        }
+
+        footer {
+            background-color: #333; /* Define el color de fondo del pie de página */
+            color: #fff; /* Define el color del texto en el pie de página */
+            text-align: center; /* Centra el texto en el pie de página */
+            padding: 10px 0; /* Define el padding superior e inferior del pie de página */
+            position: fixed; /* Fija el pie de página en la parte inferior de la página */
+            width: 100%; /* Hace que el pie de página ocupe el ancho completo de la página */
+            bottom: 0; /* Posiciona el pie de página en la parte inferior de la ventana del navegador */
+        }
+    </style>
+    <script>
+        function openTab(event, tabId) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none"; /* Oculta todos los contenidos de las pestañas */
+            }
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", ""); /* Elimina la clase activa de todas las pestañas */
+            }
+            document.getElementById(tabId).style.display = "block"; /* Muestra el contenido de la pestaña seleccionada */
+            event.currentTarget.className += " active"; /* Agrega la clase activa a la pestaña seleccionada */
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="C:\Users\Esteban\Desktop\projectIud\Imagenes\Perfil.jpg" alt="Esteban Chalarca Quintana"> <!-- Imagen de perfil en el encabezado -->
+        <h1>Bienvenido a Mi Página</h1> <!-- Título principal de la página -->
+        <p>Soy Esteban Chalarca Quintana, estudiante de Ingeniería de Software.</p> <!-- Descripción breve -->
+    </header>
+
+    <section id="about">
+        <h2>Sobre Mí</h2> <!-- Título de la sección "Sobre Mí" -->
+        <p>¡Hola! Soy Esteban Chalarca Quintana, un apasionado estudiante de Ingeniería de Software con 33 años de edad. Estoy comprometido con el aprendizaje y la innovación tecnológica, siempre buscando soluciones creativas para problemas complejos. Mi objetivo es convertir mi pasión por la tecnología en una carrera que me permita hacer una diferencia real en el mundo.</p> <!-- Descripción sobre ti -->
+    </section>
+
+    <section id="blog">
+        <h2>Hardware</h2> <!-- Título de la sección del blog -->
+
+        <div class="tab-container">
+            <div class="tabs">
+                <a class="tab" href="index1.html">
+                    <img src="C:\Users\Esteban\Desktop\projectIud\Imagenes\Processor.jpeg" alt="Historia del Hardware"> <!-- Imagen para la primera pestaña -->
+                    Historia del Hardware de Computadoras !Click Aqui¡
+ 
+                </a>
+
+                <a class="tab" href="index2.html">
+                    <img src="C:\Users\Esteban\Desktop\projectIud\Imagenes\Processor.jpeg"> <!-- Imagen para la segunda pestaña -->
+                    Impacto del Hardware en el Rendimiento de los Sistemas de Inteligencia Artificial !Click Aqui¡
+                </a>
+                <a class="tab" href="index3.html">
+                    <img src="C:\Users\Esteban\Desktop\projectIud\Imagenes\Computer.jpeg"> <!-- Imagen para la tercera pestaña -->
+                    La Convergencia de Hardware y Software !Click Aqui¡
+			
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Esteban Chalarca Quintana. Todos los derechos reservados.</p> <!-- Texto del pie de página -->
+    </footer>
+</body>
+</html>
+>>>>>>> 21cc364c2407e6046ebf23b6a9bfd05319fdf164
