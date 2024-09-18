@@ -1,0 +1,156 @@
+<!DOCTYPE html> <!-- Define el tipo de documento como HTML5 -->
+<html lang="es"> <!-- Define el idioma del contenido de la página como español -->
+<head>
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres del documento como UTF-8, que es el estándar para permitir caracteres especiales y diferentes alfabetos. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Establece las configuraciones de la página para ser responsiva, adaptándose al tamaño de la pantalla de dispositivos móviles. -->
+    <title>TecnoBlog</title> <!-- Define el título de la página que aparece en la pestaña del navegador. -->
+    
+    <style>
+        /* Estilos generales para la página */
+        html, body {
+            height: 100%; /* Asegura que el HTML y el body ocupen el 100% de la altura de la ventana del navegador. */
+            margin: 0; /* Elimina el margen predeterminado del navegador para asegurar que los elementos usen todo el espacio disponible. */
+            font-family: Arial, sans-serif; /* Define Arial como la fuente principal y sans-serif como fuente de respaldo. */
+            background: url('C:/Users/Esteban/Desktop/projectIud/Imagenes/gift.webp') no-repeat center center fixed; 
+            /* Define la imagen de fondo para que se centre tanto horizontal como verticalmente, y que permanezca fija mientras se desplaza la página. */
+            background-size: cover; /* Ajusta la imagen de fondo para que cubra toda la página sin perder su proporción. */
+            color: #333; /* Define el color del texto principal en un gris oscuro. */
+            display: flex; /* Usa el modelo de caja flexible (flexbox) para distribuir el contenido de la página. */
+            flex-direction: column; /* Coloca los elementos hijos (header, main, footer) en una columna. */
+        }
+
+        body {
+            display: flex; /* Reafirma que el cuerpo use flexbox para la disposición. */
+            flex-direction: column; /* Asegura que los elementos se coloquen en una columna. */
+        }
+
+        main {
+            flex: 1; /* Hace que el contenido principal (main) ocupe todo el espacio disponible entre el header y el footer. */
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.8); /* Establece un fondo semitransparente gris oscuro para el encabezado. */
+            color: #fff; /* Establece el color del texto del encabezado como blanco. */
+            padding: 20px 0; /* Aplica un relleno de 20px arriba y abajo en el encabezado. */
+            text-align: center; /* Centra horizontalmente el contenido del encabezado. */
+            position: relative; /* Establece una posición relativa para manejar mejor los elementos dentro del encabezado. */
+        }
+
+        header img {
+            border-radius: 50%; /* Hace que la imagen del encabezado sea redonda. */
+            width: 150px; /* Establece el ancho de la imagen en 150px. */
+            height: 150px; /* Establece la altura de la imagen en 150px. */
+            object-fit: cover; /* Hace que la imagen se recorte y se ajuste dentro del área designada, manteniendo su relación de aspecto. */
+            margin-bottom: 10px; /* Añade un margen inferior de 10px a la imagen. */
+        }
+
+        section {
+            padding: 20px; /* Añade un relleno de 20px dentro de cada sección. */
+            margin: 20px; /* Establece un margen de 20px alrededor de cada sección. */
+            background-color: rgba(255, 255, 255, 0.9); /* Define un fondo blanco semitransparente para las secciones. */
+            border-radius: 5px; /* Redondea las esquinas de las secciones en 5px. */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añade una sombra suave alrededor de las secciones. */
+        }
+
+        .tab-container {
+            display: grid; /* Utiliza un sistema de rejilla para organizar los elementos hijos dentro del contenedor. */
+            grid-template-columns: repeat(2, 1fr); /* Define dos columnas de igual tamaño. */
+            gap: 20px; /* Añade un espacio de 20px entre cada elemento en la cuadrícula. */
+        }
+
+        .tab {
+            position: relative; /* Establece la posición de cada tab como relativa para poder manejar mejor los elementos internos. */
+            height: 200px; /* Establece una altura fija de 200px para cada tab. */
+            background-size: cover; /* Asegura que la imagen de fondo cubra todo el área de cada tab. */
+            background-position: center; /* Centra la imagen de fondo dentro del tab. */
+            border-radius: 5px; /* Redondea las esquinas de cada tab en 5px. */
+            overflow: hidden; /* Oculta cualquier contenido que sobresalga del área definida. */
+            display: flex; /* Usa flexbox para alinear el contenido dentro de cada tab. */
+            align-items: flex-end; /* Alinea el contenido del tab en la parte inferior. */
+            justify-content: center; /* Centra horizontalmente el contenido del tab. */
+            text-align: center; /* Centra el texto dentro del tab. */
+            color: #fff; /* Establece el color del texto dentro del tab como blanco. */
+            font-size: 18px; /* Define el tamaño de fuente del texto dentro de cada tab. */
+            padding: 10px; /* Añade un relleno de 10px dentro de cada tab. */
+        }
+
+        .tab a {
+            color: #fff; /* Define el color del texto de los enlaces dentro de los tabs como blanco. */
+            text-decoration: none; /* Elimina el subrayado de los enlaces. */
+            background-color: rgba(0, 0, 0, 0.5); /* Añade un fondo semitransparente negro a los enlaces. */
+            width: 100%; /* Hace que los enlaces ocupen el 100% del ancho del tab. */
+            padding: 10px; /* Añade un relleno de 10px dentro de los enlaces. */
+        }
+
+        /* Establece las imágenes de fondo para los tabs. Cada tab tiene una imagen diferente. */
+        .tab:nth-child(1) {
+            background-image: url('C:/Users/Esteban/Desktop/projectIud/Imagenes/Processor.jpeg');
+        }
+
+        .tab:nth-child(2) {
+            background-image: url('C:/Users/Esteban/Desktop/projectIud/Imagenes/Processor.jpeg');
+        }
+
+        .tab:nth-child(3) {
+            background-image: url('C:/Users/Esteban/Desktop/projectIud/Imagenes/Processor.jpeg');
+        }
+
+        .tab:nth-child(4) {
+            background-image: url('C:/Users/Esteban/Desktop/projectIud/Imagenes/Processor.jpeg');
+        }
+
+        footer {
+            background-color: rgba(51, 51, 51, 0.8); /* Establece un fondo gris oscuro semitransparente para el pie de página. */
+            color: #fff; /* Define el color del texto del pie de página como blanco. */
+            text-align: center; /* Centra horizontalmente el texto dentro del pie de página. */
+            padding: 10px 0; /* Añade un relleno de 10px arriba y abajo en el pie de página. */
+            width: 100%; /* Asegura que el pie de página ocupe el ancho completo de la página. */
+            bottom: 0; /* Coloca el pie de página en la parte inferior de la página. */
+            flex-shrink: 0; /* Evita que el pie de página se encoja en caso de que falte espacio. */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="C:\Users\Esteban\Desktop\project_iud\Imagenes\IA.jpeg" alt="Esteban Chalarca Quintana">
+        <!-- Imagen redonda y el nombre debajo de ella como encabezado principal -->
+        <h1>TecnoBlog</h1>
+        <p>¡Bienvenido!</p> <!-- Un saludo de bienvenida -->
+    </header>
+
+    <main>
+        <!-- Sección de contenido sobre el blog -->
+        <section id="about">
+            <h2>Sobre Mí Blog</h2>
+            <p>¡Hola! Aquí podrás encontrar información sobre tecnología y más.</p>
+        </section>
+
+        <!-- Sección con los temas que tiene el blog, usando las tabs definidas -->
+        <section id="blog">
+            <h2>Temas</h2>
+            <div class="tab-container">
+                <div class="tab">
+                    <a href="index1.html">Historia del Hardware de Computadoras</a>
+                </div>
+
+                <div class="tab">
+                    <a href="index2.html">Historia del Software de Computadoras</a>
+                </div>
+
+                <div class="tab">
+                    <a href="index3.html">Qué son los Sistemas Operativos</a>
+                </div>
+
+                <div class="tab">
+                    <a href="index4.html">Qué es Git</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Pie de página con derechos reservados -->
+        <p>© 2024 TecnoBlog. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
