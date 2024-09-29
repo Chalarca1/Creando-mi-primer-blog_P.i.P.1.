@@ -197,12 +197,13 @@
             <p>Es importante configurar tu nombre y correo electrónico en Git, ya que esta información se utiliza para identificar quién realiza los cambios en el repositorio. Puedes hacerlo con los siguientes comandos:</p>
             <ol>
             <div class="code-block">
-                <button class="copy-button" onclick="copyToClipboard('git config --global user.name \"Tu Nombre\"')">Copiar</button>
-                <code>git config --global user.name "Tu Nombre"</code>
+                <pre><code>git config --global user.name "Tu Nombre"</code></pre>
+                <button class="copy-button" onclick="copyToClipboard('git config --global user.name Tu Nombre')">Copiar código</button>                
             </div>
+
             <div class="code-block">
-                <button class="copy-button" onclick="copyToClipboard('git config --global user.email \"tuemail@ejemplo.com\"')">Copiar</button>
-                <code>git config --global user.email "tuemail@ejemplo.com"</code>
+                <pre><code>git config --global user.email "tuemail@ejemplo.com"</code></pre>
+                <button class="copy-button" onclick="copyToClipboard('git config --global user.email tuemail@ejemplo.com')">Copiar código</button>                
             </div>
             </ol>
             <p>Reemplaza "Tu Nombre" y "tuemail@ejemplo.com" con tu información real. Esto garantiza que tus commits sean correctamente atribuidos a ti.</p>
@@ -231,7 +232,7 @@
                 <li>Inicializa el repositorio:</li>
                 <div class="code-block">
                     <pre><code>git init</code></pre>
-                    <button class="copy-button" onclick="copyToClipboard('git init')">Copiar código</button>
+                    <button class="copy-button"onclick="copyToClipboard('git init')">Copiar código</button>
                 </div>
                 <p>El comando <code>git init</code> crea un nuevo subdirectorio llamado <code>.git</code> en el directorio actual, lo que significa que se ha inicializado un nuevo repositorio de Git en esa ubicación.</p>
             </ol>
@@ -299,8 +300,6 @@
                     </div>
                 </li>
             </ol>
-
-            
 
             <h3>Conclusión del Tutorial</h3>
             <p>¡Y eso es todo! Has aprendido cómo instalar Git, inicializar un repositorio, crear branches y conectarte a un repositorio remoto en GitHub. Estos son pasos básicos pero esenciales para cualquier desarrollador que quiera llevar un control efectivo de sus proyectos. Recuerda que la práctica es clave para dominar Git. ¡Feliz codificación!</p>
