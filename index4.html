@@ -185,24 +185,15 @@
             <ol>
                 <li>Descarga el instalador de Git desde la página oficial: <a href="https://git-scm.com/download/win" target="_blank">git-scm.com</a>.</li>
                 <li>Ejecuta el instalador y sigue las instrucciones en pantalla.</li>
-                <li>Verifica la instalación abriendo la terminal de comandos y escribiendo:</li>
+                <li>Una vez instalado, verifica la instalación abriendo la terminal (en Linux) o la línea de comandos (en Windows) y ejecutando el siguiente comando:</li>
                 <div class="code-block">
                     <pre><code>git --version</code></pre>
                     <button class="copy-button" onclick="copyToClipboard('git --version')">Copiar código</button>
                 </div>
-            </ol>
-
-            <h4>2. Verificación de la instalación</h4>
-            <p>Una vez instalado, verifica la instalación abriendo la terminal (en Linux) o la línea de comandos (en Windows) y ejecutando el siguiente comando:</p>
-            <ol>
-            <div class="code-block">
-                <button class="copy-button" onclick="copyToClipboard('git --version')">Copiar</button>
-                <code>git --version</code>
-            </div>
-            </ol>
+            </ol>            
             <p>Esto debería mostrar la versión de Git que has instalado.</p>
 
-            <h4>3. Añadir un correo a Git</h4>
+            <h4>2. Añadir un correo a Git</h4>
             <p>Es importante configurar tu nombre y correo electrónico en Git, ya que esta información se utiliza para identificar quién realiza los cambios en el repositorio. Puedes hacerlo con los siguientes comandos:</p>
             <ol>
             <div class="code-block">
@@ -216,18 +207,17 @@
             </ol>
             <p>Reemplaza "Tu Nombre" y "tuemail@ejemplo.com" con tu información real. Esto garantiza que tus commits sean correctamente atribuidos a ti.</p>
 
-            <h4>4. Crear un Nuevo Repositorio</h4>
+            <h4>3. Crear un Nuevo Repositorio</h4>
             <p>Decide en qué carpeta deseas crear tu repositorio y navega hasta allí en la terminal. Luego, ejecuta:</p>
             <ol>
             <div class="code-block">
-                <pre><code>mkdir nombre-del-repositorio</code></pre>
-                <pre><code>cd nombre-del-repositorio</code></pre>
+                <pre><code>mkdir nombre-del-proyecto</code></pre>
                 <button class="copy-button" onclick="copyToClipboard('cd /ruta/a/tu/proyecto')">Copiar código</button>
             </div>
             </ol>
-            <p>Esto creará una nueva carpeta y la inicializará como un repositorio Git.</p>
+            <p>Esto creará una nueva carpeta o directorio.</p>
 
-            <h4>5. Inicialización de un Repositorio Git</h4>
+            <h4>4. Inicialización de un Repositorio Git</h4>
             <p>Para empezar a utilizar Git, primero necesitas inicializar un repositorio en tu máquina local. A continuación, se presentan los pasos para hacerlo en Linux y Windows:</p>
             
             <h5>En Linux</h5>
@@ -261,7 +251,7 @@
                 </div>
             </ol>            
 
-            <h4>6. Conexión a un repositorio remoto en GitHub</h4>
+            <h4>5. Conexión a un repositorio remoto en GitHub</h4>
             <p>Para compartir tus cambios con otros desarrolladores, es necesario que conectes tu repositorio local a un repositorio remoto, como GitHub. Aquí están los pasos:</p>
 
             <ol>
@@ -281,7 +271,7 @@
             </ol>
             <p><strong>Nota:</strong> Es posible que necesites autenticarte en GitHub si es la primera vez que haces un push desde este repositorio.</p>
 
-            <h4>7. Creación de branches</h4>
+            <h4>6. Creación de branches</h4>
             <p>Las ramas (o branches) son útiles para el desarrollo de nuevas características o para realizar correcciones sin afectar la versión estable del código. A continuación, te explico cómo crear y utilizar ramas:</p>
 
             <ol>
