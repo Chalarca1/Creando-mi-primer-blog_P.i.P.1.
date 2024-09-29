@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Que es git?</title>
+    <title>¿Qué es Git?</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,6 +18,25 @@
             text-align: center;
             padding: 10px 0;
         }
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            align-items: center;
+        }
+        .tab-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .tab-button:hover {
+            background-color: #555;
+        }
         .content {
             padding: 20px;
             margin: 20px auto;
@@ -26,6 +44,13 @@
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Para posicionar las flechas */
+        }
+        .tab {
+            display: none;
+        }
+        .active {
+            display: block;
         }
         .back-button {
             display: block;
@@ -42,8 +67,46 @@
         .back-button:hover {
             background-color: #555;
         }
+        .arrow-button {
+            background-color: transparent;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+            position: fixed; /* Posicionamiento fijo */
+            top: 50%; /* Centrar verticalmente */
+            transform: translateY(-50%); /* Ajuste para centrar exactamente */
+            z-index: 1000; /* Asegura que esté sobre otros elementos */
+        }
+        .arrow-left {
+            left: 10px; /* Ajusta la posición según sea necesario */
+        }
+        .arrow-right {
+            right: 10px; /* Ajusta la posición según sea necesario */
+        }
         footer {
             margin-top: auto;
+        }
+        .code-block {
+            background-color: #282c34; /* Fondo oscuro */
+            color: #ffffff; /* Texto blanco */
+            border-radius: 5px;
+            padding: 15px;
+            position: relative; /* Para posicionar el botón de copiar */
+            overflow: auto; /* Habilita desplazamiento horizontal si es necesario */
+            margin: 10px 0; /* Espaciado vertical */
+            font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada */
+        }
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #4caf50; /* Color del botón */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+            border-radius: 3px; /* Bordes redondeados */
         }
     </style>
 </head>
@@ -52,13 +115,275 @@
         <h1>TecnoBlog</h1>
     </header>
     
-    <div class="content">
-        <h2>Que es git?</h2>
-        <a href="index.html" class="back-button">Regresar a la Página Principal</a> <!-- Botón para regresar a la página principal -->
+    <div class="tab-container">
+        <button class="tab-button" onclick="showTab('whatIsGit')">¿Qué es Git?</button>
+        <button class="tab-button" onclick="showTab('gitTutorial')">Tutorial Git</button>
+        <button class="tab-button" onclick="showTab('githubTutorial')">Tutorial GitHub</button> <!-- Nueva pestaña -->
     </div>
 
+    <div class="content">
+        <button class="arrow-button arrow-left" onclick="showPreviousTab()">&#9664;</button>
+        <div id="whatIsGit" class="tab active">
+            <h2>¿Qué es Git?</h2>
+            <p>Git es un sistema de control de versiones distribuido que permite a los desarrolladores rastrear y gestionar cambios en el código fuente de un proyecto. Fue creado por Linus Torvalds en 2005 con el objetivo de gestionar de manera eficiente el desarrollo del kernel de Linux, pero rápidamente se convirtió en una herramienta estándar en la mayoría de los proyectos de software debido a su robustez, flexibilidad y capacidad para facilitar la colaboración.</p>
+
+            <h3>Características clave de Git</h3>
+            <ul>
+                <li><strong>Control de versiones distribuido:</strong> A diferencia de otros sistemas de control de versiones como Subversion (SVN), Git es distribuido. Esto significa que cada desarrollador tiene una copia completa del repositorio, incluyendo su historial, lo que permite trabajar de forma independiente sin necesidad de estar siempre conectado a un servidor central.</li>
+                <li><strong>Eficiencia y rendimiento:</strong> Git está optimizado para manejar proyectos grandes con múltiples contribuyentes. Al utilizar algoritmos eficientes, puede almacenar versiones del código de manera que solo se guarden los cambios (deltas), en lugar de duplicar todo el archivo en cada versión.</li>
+                <li><strong>Ramas (branches):</strong> Una de las características más poderosas de Git es la posibilidad de crear ramas. Las ramas permiten a los desarrolladores trabajar en diferentes características, correcciones o experimentos de forma paralela, sin afectar el código principal (generalmente contenido en la rama principal o main). Una vez que los cambios en una rama son satisfactorios, pueden fusionarse (merge) con el código principal.</li>
+            </ul>
+
+            <h3>Comandos comunes</h3>
+            <ul>
+                <li><code>git init:</code> Inicializa un nuevo repositorio Git en un directorio.</li>
+                <li><code>git clone:</code> Clona un repositorio existente desde un servidor remoto a tu máquina local.</li>
+                <li><code>git add:</code> Añade archivos o cambios al área de preparación (staging area) para ser confirmados.</li>
+                <li><code>git commit:</code> Confirma los cambios del área de preparación y los guarda en el historial del repositorio.</li>
+                <li><code>git push:</code> Sube los cambios confirmados a un repositorio remoto.</li>
+                <li><code>git pull:</code> Actualiza tu repositorio local con los últimos cambios del repositorio remoto.</li>
+            </ul>
+
+            <p><strong>Historial detallado:</strong> Git mantiene un registro detallado de cada cambio realizado en un proyecto, incluyendo información sobre quién realizó el cambio, cuándo y qué fue modificado. Esto facilita el rastreo de errores o la reversión de cambios si es necesario.</p>
+            
+            <p><strong>Colaboración:</strong> Git facilita la colaboración entre múltiples desarrolladores. Usando plataformas como GitHub, GitLab o Bitbucket, los equipos pueden compartir sus repositorios, colaborar mediante "pull requests" y revisar el código antes de fusionarlo.</p>
+
+            <h3>Ventajas de Git</h3>
+            <ul>
+                <li><strong>Desempeño:</strong> Al ser distribuido, Git permite a los desarrolladores trabajar sin depender de la conexión a internet para muchas de las operaciones. También es rápido y eficiente en comparación con otros sistemas de control de versiones.</li>
+                <li><strong>Seguridad:</strong> Git utiliza un modelo basado en criptografía SHA-1 para garantizar la integridad del historial de versiones. Cada commit se referencia mediante un hash único, lo que hace prácticamente imposible modificar el historial sin que sea detectado.</li>
+                <li><strong>Escalabilidad:</strong> Git puede manejar grandes proyectos con múltiples contribuyentes sin problemas, lo que lo hace ideal tanto para proyectos pequeños como para grandes empresas.</li>
+            </ul>
+
+            <h3>Conclusión</h3>
+            <p>Git es una herramienta esencial en el desarrollo moderno de software. No solo permite mantener un registro de los cambios realizados en un proyecto, sino que también facilita la colaboración y experimentación sin comprometer la estabilidad del código. Aprender Git es fundamental para cualquier programador que desee trabajar en proyectos colaborativos o en entornos de desarrollo profesional.</p>
+        </div>
+
+        <div id="gitTutorial" class="tab">
+            <h3>Tutorial: Cómo Instalar y Conectar Git en Linux y Windows</h3>
+            <p>Bienvenido a una nueva entrada de mi blog personal, donde aprenderás a instalar y utilizar Git tanto en Linux como en Windows. En este tutorial, te guiaré paso a paso por el proceso de instalación, inicialización de un repositorio local, creación de branches y conexión a un repositorio remoto en GitHub. Git es una herramienta fundamental para el control de versiones en el desarrollo de software, y conocer cómo utilizarlo correctamente te permitirá gestionar tus proyectos de manera más eficiente. ¡Empecemos!</p>
+
+            <h4>1. Instalación de Git</h4>
+            <p>Antes de comenzar con el uso de Git, es necesario instalarlo en tu sistema. A continuación, se presentan los pasos para instalar Git en Linux y Windows:</p>
+
+            <h5>En Linux</h5>
+            <ol>
+                <li>Abre la terminal.</li>
+                <li>Actualiza tu lista de paquetes:</li>
+                <div class="code-block">
+                    <pre><code>sudo apt update</code></pre>
+                    <button class="copy-button" onclick="copyToClipboard('sudo apt update')">Copiar código</button>
+                </div>
+                <li>Instala Git:</li>
+                <div class="code-block">
+                    <pre><code>sudo apt install git</code></pre>
+                    <button class="copy-button" onclick="copyToClipboard('sudo apt install git')">Copiar código</button>
+                </div>
+            </ol>
+
+            <h5>En Windows</h5>
+            <ol>
+                <li>Descarga el instalador de Git desde la página oficial: <a href="https://git-scm.com/download/win" target="_blank">git-scm.com</a>.</li>
+                <li>Ejecuta el instalador y sigue las instrucciones en pantalla.</li>
+                <li>Verifica la instalación abriendo la terminal de comandos y escribiendo:</li>
+                <div class="code-block">
+                    <pre><code>git --version</code></pre>
+                    <button class="copy-button" onclick="copyToClipboard('git --version')">Copiar código</button>
+                </div>
+            </ol>
+
+            <h4>2. Inicialización de un Repositorio Git</h4>
+            <p>Para empezar a utilizar Git, primero necesitas inicializar un repositorio en tu máquina local. A continuación, se presentan los pasos para hacerlo en Linux y Windows:</p>
+            
+            <h5>En Linux</h5>
+            <ol>
+                <li>Abre la terminal.</li>
+                <li>Navega hasta el directorio donde deseas crear tu proyecto:</li>
+                <div class="code-block">
+                    <pre><code>cd /ruta/a/tu/proyecto</code></pre>
+                    <button class="copy-button" onclick="copyToClipboard('cd /ruta/a/tu/proyecto')">Copiar código</button>
+                </div>
+                <li>Inicializa el repositorio:</li>
+                <div class="code-block">
+                    <pre><code>git init</code></pre>
+                    <button class="copy-button" onclick="copyToClipboard('git init')">Copiar código</button>
+                </div>
+                <p>El comando <code>git init</code> crea un nuevo subdirectorio llamado <code>.git</code> en el directorio actual, lo que significa que se ha inicializado un nuevo repositorio de Git en esa ubicación.</p>
+            </ol>
+
+            <h5>En Windows</h5>
+            <ol>
+                <li>Abre la línea de comandos o PowerShell.</li>
+                <li>Navega hasta el directorio donde deseas crear tu proyecto:</li>
+                <div class="code-block">
+                    <pre><code>cd "C:\ruta\a\tu\proyecto"</code></pre>
+                    <button class="copy-button" onclick="copyToClipboard('cd \"C:\\ruta\\a\\tu\\proyecto\"')">Copiar código</button>
+                </div>
+                <li>Inicializa el repositorio:</li>
+                <div class="code-block">
+                    <pre><code>git init</code></pre>
+                    <button class="copy-button" onclick="copyToClipboard('git init')">Copiar código</button>
+                </div>
+            </ol>
+
+            <h4>3. Creación de branches</h4>
+            <p>Las ramas (o branches) son útiles para el desarrollo de nuevas características o para realizar correcciones sin afectar la versión estable del código. A continuación, te explico cómo crear y utilizar ramas:</p>
+
+            <ol>
+                <li>Para crear una nueva rama, utiliza el siguiente comando:
+                    <div class="code-block">
+                        <pre><code>git branch nombre-de-la-rama</code></pre>
+                        <button class="copy-button" onclick="copyToClipboard('git branch nombre-de-la-rama')">Copiar código</button>
+                    </div>
+                </li>
+                <li>Para cambiarte a la nueva rama:
+                    <div class="code-block">
+                        <pre><code>git checkout nombre-de-la-rama</code></pre>
+                        <button class="copy-button" onclick="copyToClipboard('git checkout nombre-de-la-rama')">Copiar código</button>
+                    </div>
+                </li>
+                <li>Una vez que hayas hecho cambios y los hayas confirmado, puedes regresar a la rama principal (main) y fusionar tu rama nueva:
+                    <div class="code-block">
+                        <pre><code>git checkout main</code></pre>
+                        <button class="copy-button" onclick="copyToClipboard('git checkout main')">Copiar código</button>
+                    </div>
+                    seguido de:
+                    <div class="code-block">
+                        <pre><code>git merge nombre-de-la-rama</code></pre>
+                        <button class="copy-button" onclick="copyToClipboard('git merge nombre-de-la-rama')">Copiar código</button>
+                    </div>
+                </li>
+            </ol>
+
+            <h4>4. Conexión a un repositorio remoto en GitHub</h4>
+            <p>Para compartir tus cambios con otros desarrolladores, es necesario que conectes tu repositorio local a un repositorio remoto, como GitHub. Aquí están los pasos:</p>
+
+            <ol>
+                <li>Inicia sesión en GitHub y crea un nuevo repositorio.</li>
+                <li>En tu terminal, conecta tu repositorio local al remoto:
+                    <div class="code-block">
+                        <pre><code>git remote add origin https://github.com/tu_usuario/nombre-repo.git</code></pre>
+                        <button class="copy-button" onclick="copyToClipboard('git remote add origin https://github.com/tu_usuario/nombre-repo.git')">Copiar código</button>
+                    </div>
+                </li>
+                <li>Envía tus cambios al repositorio remoto:
+                    <div class="code-block">
+                        <pre><code>git push -u origin main</code></pre>
+                        <button class="copy-button" onclick="copyToClipboard('git push -u origin main')">Copiar código</button>
+                    </div>
+                </li>
+            </ol>
+
+            <p><strong>Nota:</strong> Es posible que necesites autenticarte en GitHub si es la primera vez que haces un push desde este repositorio.</p>
+
+            <h3>Conclusión del Tutorial</h3>
+            <p>¡Y eso es todo! Has aprendido cómo instalar Git, inicializar un repositorio, crear branches y conectarte a un repositorio remoto en GitHub. Estos son pasos básicos pero esenciales para cualquier desarrollador que quiera llevar un control efectivo de sus proyectos. Recuerda que la práctica es clave para dominar Git. ¡Feliz codificación!</p>
+        </div>
+
+        <div id="githubTutorial" class="tab">
+            <h3>Tutorial: Cómo Utilizar GitHub</h3>
+            <p>GitHub es una plataforma que permite a los desarrolladores almacenar, compartir y colaborar en proyectos de software utilizando Git. A continuación, te presento un tutorial básico sobre cómo utilizar GitHub:</p>
+
+            <h4>1. Crear una cuenta en GitHub</h4>
+            <p>Para comenzar, necesitas crear una cuenta en GitHub. Visita <a href="https://github.com/" target="_blank">github.com</a> y haz clic en "Sign up". Sigue las instrucciones para crear tu cuenta.</p>
+
+            <h4>2. Crear un nuevo repositorio</h4>
+            <p>Una vez que hayas creado tu cuenta, inicia sesión y haz lo siguiente:</p>
+            <ol>
+                <li>Haz clic en el botón de "+" en la esquina superior derecha.</li>
+                <li>Selecciona "New repository".</li>
+                <li>Ingresa un nombre para tu repositorio y, si deseas, una descripción.</li>
+                <li>Selecciona si deseas que el repositorio sea público o privado.</li>
+                <li>Haz clic en "Create repository".</li>
+            </ol>
+
+            <h4>3. Clonar el repositorio en tu máquina local</h4>
+            <p>Para trabajar en el repositorio que acabas de crear, clónalo en tu máquina local usando el siguiente comando:</p>
+            <div class="code-block">
+                <pre><code>git clone https://github.com/tu_usuario/nombre-repo.git</code></pre>
+                <button class="copy-button" onclick="copyToClipboard('git clone https://github.com/tu_usuario/nombre-repo.git')">Copiar código</button>
+            </div>
+
+            <h4>4. Realizar cambios y confirmar</h4>
+            <p>Realiza cambios en tu proyecto, y luego utiliza los siguientes comandos para añadir y confirmar tus cambios:</p>
+            <div class="code-block">
+                <pre><code>git add .</code></pre>
+                <button class="copy-button" onclick="copyToClipboard('git add .')">Copiar código</button>
+            </div>
+            <div class="code-block">
+                <pre><code>git commit -m "Descripción de los cambios"</code></pre>
+                <button class="copy-button" onclick="copyToClipboard('git commit -m "Descripción de los cambios"')">Copiar código</button>
+            </div>
+
+            <h4>5. Enviar cambios al repositorio remoto</h4>
+            <p>Para que tus cambios se reflejen en GitHub, usa el comando:</p>
+            <div class="code-block">
+                <pre><code>git push origin main</code></pre>
+                <button class="copy-button" onclick="copyToClipboard('git push origin main')">Copiar código</button>
+            </div>
+
+            <h4>6. Crear y gestionar branches en GitHub</h4>
+            <p>Para trabajar en nuevas características sin afectar el código principal, crea ramas en GitHub:</p>
+            <div class="code-block">
+                <pre><code>git checkout -b nombre-de-la-rama</code></pre>
+                <button class="copy-button" onclick="copyToClipboard('git checkout -b nombre-de-la-rama')">Copiar código</button>
+            </div>
+
+            <h4>7. Realizar un pull request</h4>
+            <p>Cuando hayas terminado de trabajar en una rama y estés listo para fusionar tus cambios con la rama principal, crea un pull request en GitHub:</p>
+            <ol>
+                <li>Ve a tu repositorio en GitHub.</li>
+                <li>Haz clic en "Pull requests".</li>
+                <li>Haz clic en "New pull request".</li>
+                <li>Selecciona tu rama y haz clic en "Create pull request".</li>
+            </ol>
+
+            <h3>Conclusión</h3>
+            <p>Ahora ya sabes cómo utilizar GitHub para almacenar y colaborar en proyectos de software. GitHub es una herramienta poderosa que te permitirá trabajar de manera más efectiva con otros desarrolladores. ¡Explora, practica y diviértete codificando!</p>
+        </div>
+        <button class="arrow-button arrow-right" onclick="showNextTab()">&#9654;</button>
+    </div>
+
+    <a class="back-button" href="index.html">Volver al inicio</a>
+
     <footer>
-        <p>© 2024 Esteban Chalarca Quintana. Todos los derechos reservados.</p>
+        <p>© 2024 TecnoBlog - Todos los derechos reservados</p>
     </footer>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function copyToClipboard(code) {
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Código copiado al portapapeles');
+            });
+        }
+
+        let currentTab = 0;
+
+        function showPreviousTab() {
+            const tabs = document.querySelectorAll('.tab');
+            if (currentTab > 0) {
+                tabs[currentTab].classList.remove('active');
+                currentTab--;
+                tabs[currentTab].classList.add('active');
+            }
+        }
+
+        function showNextTab() {
+            const tabs = document.querySelectorAll('.tab');
+            if (currentTab < tabs.length - 1) {
+                tabs[currentTab].classList.remove('active');
+                currentTab++;
+                tabs[currentTab].classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
